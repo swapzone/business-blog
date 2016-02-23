@@ -1,0 +1,8 @@
+<div id="nav" class="nav">
+    <ul class="clearfix">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+</div>
+
