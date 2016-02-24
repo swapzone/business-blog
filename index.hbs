@@ -391,7 +391,7 @@
 							<div class="timeline-box-inner animate-right">
 								<span class="arrow"></span>
 								<div class="date">Oct 2009 - Sep 2012</div>
-								<h3>Dual Student and Software Developer</h3>
+								<h3>Student and Software Developer</h3>
 								<h4>Hewlett Packard - Germany and Ireland</h4>
 								<p>As a dual student with Hewlett Packard I did several short projects using a lot of different tools and programming languages. My bachelor's thesis was about SharePoint and the implementation in the public sector.</p>
 							</div>
@@ -463,80 +463,17 @@
 		<section id="blog" class="section section-blog">
 			<div class="animate-up">
 				<h2 class="section-title">From The Blog</h2>
-				
-				<main id="content" class="content" role="main">
+
+                <div class="blog-grid">
+                    <div class="grid-sizer"></div>
+
 					{{! The tag below includes the post loop - partials/loop.hbs }}
 					{{> "loop"}}
-				</main>
-
-				<div class="blog-grid">
-					<div class="grid-sizer"></div>
-					<div class="grid-item">
-						<article class="post-box">
-							<div class="post-media">
-								<div class="post-image">
-									<a href="single.html"><img src="{{asset 'img/uploads/thumb-449x286-1.jpg'}}" alt=""> </a>
-								</div>
-							</div>
-
-							<div class="post-data">
-								<time class="post-datetime" datetime="2015-03-13T07:44:01+00:00">
-									<span class="day">03</span>
-									<span class="month">MAY</span>
-								</time>
-
-								<div class="post-tag">
-									<a href="">#Photo</a>
-									<a href="">#Architect</a>
-								</div>
-
-								<h3 class="post-title">
-									<a href="single-image.html">Image Post</a>
-								</h3>
-
-								<div class="post-info">
-									<a href=""><i class="icon icon-user"></i>by admin</a>
-									<a href=""><i class="icon icon-comments"></i>56</a>
-								</div>
-							</div>
-						</article>
-					</div>
-
-					<div class="grid-item">
-						<article class="post-box">
-							<div class="post-media">
-								<div class="post-image">
-									<a href="single-vimeo.html">
-										<img src="{{asset 'img/uploads/thumb-449x286-5.jpg'}}" alt="">
-										<span class="post-type-icon"><i class="icon icon-play"></i></span>
-									</a>
-								</div>
-							</div>
-
-							<div class="post-data">
-								<time class="post-datetime" datetime="2015-03-13T07:44:01+00:00">
-									<span class="day">03</span>
-									<span class="month">MAY</span>
-								</time>
-
-								<div class="post-tag">
-									<a href="">#Photo</a>
-									<a href="">#Architect</a>
-								</div>
-
-								<h3 class="post-title">
-									<a href="single-vimeo.html">Vimeo Video Post</a>
-								</h3>
-
-								<div class="post-info">
-									<a href=""><i class="icon icon-user"></i>by admin</a>
-									<a href=""><i class="icon icon-comments"></i>56</a>
-								</div>
-							</div>
-						</article>
-					</div>
 				</div>
-			</div>	
+
+                {{! Previous/next page links }}
+                {{pagination}}
+			</div>
 		</section><!-- #blog -->
 
         <!--
