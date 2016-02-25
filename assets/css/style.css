@@ -2241,7 +2241,7 @@ body {
 .header-has-img .head-bg {
   height: 270px;
   display: block; }
-.header-has-img.home .head-bg {
+.header-has-img.home-template .head-bg {
   height: 515px; }
 .header-has-img .head-bar {
   background-color: transparent;

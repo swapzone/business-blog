@@ -1133,7 +1133,68 @@
             return false;
         });
 
+        /**
+         *
+         *
+         * @param postList
+         */
+        function loadPosts(postList) {
 
+            $.get(ghost.url.api('posts'))
+                .done(function(result) {
+
+                    var htmlString = "";
+
+                    for(var i=0; i<result.posts.length; i++) {
+                        var post = result.posts[i];
+                        var tagList = "";
+
+                        if (post.hasOwnProperty('tags'))
+                            post.tags.forEach(function (tag) {
+                                tagList += "<a href='" + tag.url + "'>" + tag.title + "</a>";
+                            });
+                        else
+                            tagList = "No tags";
+
+                        htmlString += "" +
+                            "<li>" +
+                            "<div class='post-tag'>" +
+                            tagList +
+                            "</div>" +
+                            "<h3 class='post-title'><a href='/" + post.slug + "'>" + post.title + "</a></h3>" +
+                            "</li>";
+
+                        if (i === 3) break;
+                    }
+
+                    $(postList).html(htmlString);
+                });
+        }
+
+        /**
+         *
+         *
+         * @param tagList
+         */
+        function loadTags(tagList) {
+
+            $.get(ghost.url.api('tags'))
+                .done(function(result) {
+
+                    var htmlString = "";
+
+                    result.tags.forEach(function(tag) {
+                        var url = '/tag/' + tag.slug;
+
+                        htmlString += "<li><a href='" + url + "'>" + tag.name + "</a></li>";
+                    });
+
+                    $(tagList).html(htmlString);
+                });
+        }
+
+        loadPosts($('#post-list'));
+        loadTags($('#tag-list'));
 
         /** Preloader:
          *  site was successfully loaded, hide site pre-loader */
@@ -1154,7 +1215,7 @@
             stickyNavigationAppear();
             setSectionContactHeight();
             positioningTimelineElements();
-        }
+        };
 
         // New height and width
         var winNewWidth = $(window).width(),

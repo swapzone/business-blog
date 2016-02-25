@@ -4,6 +4,8 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
+    <!-- header-has-img -->
+
 <div class="content">
     <div class="container">
 
@@ -16,82 +18,25 @@
                             <header class="post-header">
                                 <div class="post-data">
                                     <div class="post-tag">
-                                        <a href="">#Photo</a>
-                                        <a href="">#Architect</a>
+                                        {{tags prefix="#"}}
                                     </div>
 
                                     <div class="post-title-wrap">
-                                        <h1 class="post-title">The History and Future of Motorcycles</h1>
-                                        <time class="post-datetime" datetime="2015-03-13T07:44:01+00:00">
-                                            <span class="day">03</span>
-                                            <span class="month">MAY</span>
+                                        <h1 class="post-title">{{title}}</h1>
+                                        <time class="post-datetime" datetime="{{date format='YYYY-MM-DD'}}">
+                                            <span class="day">{{date format="DD"}}</span>
+                                            <span class="month" style="text-transform: uppercase;">{{date format="MMM"}}</span>
                                         </time>
                                     </div>
 
                                     <div class="post-info">
-                                        <a href=""><i class="icon icon-user"></i>by admin</a>
-                                        <a href=""><i class="icon icon-comments"></i>56</a>
+                                        <a href=""><i class="icon icon-user"></i>by {{author.name}}</a>
                                     </div>
                                 </div>
                             </header>
 
                             <div class="post-editor clearfix">
-                                <p>Hello! The Sky People have sent us a message... that they can take whatever they
-                                    want.<br/>
-                                    That no one can stop them. </p>
-
-                                <p>Well, we will send them a message. You ride out as fast as the wind can carry you. You
-                                    tell
-                                    the other clans to come. Tell them Toruk Macto calls to them! You fly now, with me! My
-                                    brothers! Sisters! And we will show the Sky People... that they caWell, we will send
-                                    them a
-                                    message. You ride out as fast as the wind can carry you. You tell the other clans to
-                                    come.
-                                    Tell them Toruk Macto calls to them! You fly now, with me! My brothers! Sisters! And we
-                                    will
-                                    show the Sky People... that they cnnot take whatever they want! And that this... this is
-                                    our
-                                    land!</p>
-                                <blockquote>
-                                    <p>"My commute is extremely short. Just 20 steps across the apartment to my office
-                                        overlooking Butler St. Sometimes when I'm feeling fancy, I'll walk 2 blocks down the
-                                        street for coffee first. Either way, it's very convenient."<br>
-                                        <cite><a href="">John Doe</a> - Someone famous in Source Title</cite>
-                                    </p>
-                                </blockquote>
-
-                                <figure id="attachment_905" style="width: 509px;" class="wp-caption alignright">
-                                    <img class="size-full wp-image-905 " title="Image Alignment 509x319"
-                                         alt="Image Alignment 509x319" src="img/uploads/rs-thumb-509x319.jpg" width="509"
-                                         height="319">
-                                    <figcaption class="wp-caption-text">Feels good to be right all the time.</figcaption>
-                                </figure>
-
-                                <p>You ride out as fast as the wind can carry you. You tell the other clans to come. Tell
-                                    them
-                                    Toruk Macto calls to them! You fly now, with me! My brothers! Sisters! And we will show
-                                    the
-                                    Sky People... that they caWell, we will send them a message. You ride out as fast as the
-                                    wind can carry you. You tell the other clans to come.
-
-
-                                </p>
-
-                                <h2>Tell them Toruk Macto calls to them!</h2>
-
-                                <ul>
-                                    <li>You fly now, with me;</li>
-                                    <li>My brothers! Sisters;</li>
-                                    <li>And we will show the Sky People.;</li>
-                                    <li>That they cnnot take whatever they want.</li>
-                                </ul>
-
-                                <p>You ride out as fast as the wind can carry you. You tell the other clans to come. Tell
-                                    them
-                                    Toruk Macto calls to them! You fly now, with me! My brothers! Sisters! And we will show
-                                    the
-                                    Sky People... that they caWell, we will send them a message. You ride out as fast as the
-                                    wind can carry you. You tell the other clans to come. </p>
+                               {{content}}
                             </div>
 
                             <footer class="post-footer">
@@ -101,7 +46,7 @@
                                 </div>
                             </footer>
                         </div><!-- .post-inner -->
-                    </article><!-- .post-content -->
+                    </article>
 
                     <nav class="post-pagination section-box">
                         <div class="post-next">
@@ -132,10 +77,10 @@
                     <div class="widget-area">
                         <aside class="widget widget-profile">
                             <div class="profile-photo">
-                                <img src="img/uploads/rs-photo-v2.jpg" alt="Robert Smith"/>
+                                <img src="{{author.image}}" alt="{{author.name}}"/>
                             </div>
                             <div class="profile-info">
-                                <h2 class="profile-title">Robert Smith</h2>
+                                <h2 class="profile-title">{{author}}</h2>
                                 <h3 class="profile-position">Developer and businessman</h3>
                             </div>
                         </aside><!-- .widget-profile -->
@@ -186,43 +131,10 @@
                             </form>
                         </aside><!-- .widget_contact -->
 
-                        <aside class="widget widget-popuplar-posts">
-                            <h2 class="widget-title">Popular posts</h2>
-                            <ul>
-                                <li>
-                                    <div class="post-media"><a href=""><img src="img/uploads/thumb-78x56-1.jpg" alt=""/></a></div>
-                                    <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-                                    <div class="post-info"><a href=""><i class="icon icon-comments"></i>56 comments</a></div>
-                                </li>
-                                <li>
-                                    <div class="post-media"><a href=""><img src="img/uploads/thumb-78x56-2.jpg" alt=""/></a></div>
-                                    <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-                                    <div class="post-info"><a href=""><i class="icon icon-comments"></i>56 comments</a></div>
-                                </li>
-                                <li>
-                                    <div class="post-media"><a href=""><img src="img/uploads/thumb-78x56-3.jpg" alt=""/></a></div>
-                                    <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-                                    <div class="post-info"><a href=""><i class="icon icon-comments"></i>56 comments</a></div>
-                                </li>
-                            </ul>
-                        </aside><!-- .widget-popuplar-posts -->
-
-                        <aside class="widget widget_tag_cloud">
-                            <h2 class="widget-title">Tag Cloud</h2>
-                            <div class="tagcloud">
-                                <a href="" title="1 topic">Business</a>
-                                <a href="" title="9 topics">City</a>
-                                <a href="" title="10 topics">Creative</a>
-                                <a href="" title="6 topics">Fashion</a>
-                                <a href="" title="2 topics">Music</a>
-                                <a href="" title="5 topics">News</a>
-                                <a href="" title="9 topics">Peoples</a>
-                            </div>
-                        </aside><!-- .widget_tag_cloud -->
-
                         <aside class="widget widget-recent-posts">
                             <h2 class="widget-title">Recent posts</h2>
-                            <ul>
+                            <ul id="post-list">
+                                <!--
                                 <li>
                                     <div class="post-tag">
                                         <a href="">#Photo</a>
@@ -231,35 +143,13 @@
                                     <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
                                     <div class="post-info"><a href=""><i class="icon icon-comments"></i>56 comments</a></div>
                                 </li>
-                                <li>
-                                    <div class="post-tag">
-                                        <a href="">#Photo</a>
-                                        <a href="">#Architect</a>
-                                    </div>
-                                    <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-                                    <div class="post-info"><a href=""><i class="icon icon-comments"></i>56 comments</a></div>
-                                </li>
-                                <li>
-                                    <div class="post-tag">
-                                        <a href="">#Photo</a>
-                                        <a href="">#Architect</a>
-                                    </div>
-                                    <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-                                    <div class="post-info"><a href=""><i class="icon icon-comments"></i>56 comments</a></div>
-                                </li>
+                                -->
                             </ul>
                         </aside><!-- .widget-recent-posts -->
 
                         <aside class="widget widget_categories">
                             <h2 class="widget-title">Categories</h2>
-                            <ul>
-                                <li><a href="" title="Architecture Category Posts">Architecture</a> (9)</li>
-                                <li><a href="" title="Business Category Posts">Business</a> (16)</li>
-                                <li><a href="" title="Creative Category Posts">Creative</a> (18)</li>
-                                <li><a href="" title="Design Category Posts">Design</a> (10)</li>
-                                <li><a href="" title="Development Category Posts">Development</a> (14)</li>
-                                <li><a href="" title="Education Category Posts">Education</a> (9)</li>
-                            </ul>
+                            <ul id="tag-list"></ul>
                         </aside><!-- .widget_categories -->
                     </div><!-- .widget-area -->
                 </div><!-- .sidebar -->
