@@ -1137,38 +1137,78 @@
          *
          *
          * @param postList
+         * @param extended
          */
-        function loadPosts(postList) {
+        function loadPosts(postList, extended) {
 
-            $.get(ghost.url.api('posts'))
-                .done(function(result) {
+                $.get(ghost.url.api('posts', { include: "tags,author" }))
+                    .done(function (result) {
 
-                    var htmlString = "";
+                        if (!extended) {
+                            var htmlString = "";
 
-                    for(var i=0; i<result.posts.length; i++) {
-                        var post = result.posts[i];
-                        var tagList = "";
+                            for (var i = 0; i < result.posts.length; i++) {
+                                var post = result.posts[i];
+                                var tagList = "";
 
-                        if (post.hasOwnProperty('tags'))
-                            post.tags.forEach(function (tag) {
-                                tagList += "<a href='" + tag.url + "'>" + tag.title + "</a>";
-                            });
-                        else
-                            tagList = "No tags";
+                                if (post.hasOwnProperty('tags'))
+                                    post.tags.forEach(function (tag) {
+                                        tagList += "<a href='/tags/" + tag.slug + "'>#" + tag.name + "</a>";
+                                    });
+                                else
+                                    tagList = "No tags";
 
-                        htmlString += "" +
-                            "<li>" +
-                            "<div class='post-tag'>" +
-                            tagList +
-                            "</div>" +
-                            "<h3 class='post-title'><a href='/" + post.slug + "'>" + post.title + "</a></h3>" +
-                            "</li>";
+                                htmlString += "" +
+                                    "<li>" +
+                                    "<div class='post-tag'>" +
+                                    tagList +
+                                    "</div>" +
+                                    "<h3 class='post-title'><a href='/" + post.slug + "'>" + post.title + "</a></h3>" +
+                                    "</li>";
 
-                        if (i === 3) break;
-                    }
+                                if (i === 3) break;
+                            }
 
-                    $(postList).html(htmlString);
-                });
+                            $(postList).html(htmlString);
+                        }
+                        else {
+                            // load post pagination
+                            if (result.posts.length < 2) return;
+
+                            var currentPostId = parseInt($('#post-id').text());
+
+                            for (var j = 0; j < result.posts.length; j++) {
+                                var postIterator = result.posts[j];
+
+                                if (postIterator.id === currentPostId) {
+                                    if (j < result.posts.length - 1) {
+                                        var nextPost = result.posts[j + 1];
+
+                                        $(postList).html($(postList).html() +
+                                            "<div class='post-next'>" +
+                                            "<div class='post-tag'>Next Article</div>" +
+                                            "<h3 class='post-title'><a href='" + nextPost.url + "'>" + nextPost.title + "</a></h3>" +
+                                            "<div class='post-info'>" +
+                                            "<a href='/" + nextPost.author.slug + "'><i class='icon icon-user'></i>by " + nextPost.author.name + "</a>" +
+                                            "</div>" +
+                                            "</div>");
+                                    }
+                                    if (j > 0) {
+                                        var prevPost = result.posts[j - 1];
+
+                                        $(postList).html($(postList).html() +
+                                            "<div class='post-prev'>" +
+                                            "<div class='post-tag'>Previous Article</div>" +
+                                            "<h3 class='post-title'><a href='" + prevPost.url + "'>" + prevPost.title + "</a></h3>" +
+                                            "<div class='post-info'>" +
+                                            "<a href='/" + prevPost.author.slug + "'><i class='icon icon-user'></i>by " + prevPost.author.name + "</a>" +
+                                            "</div>" +
+                                            "</div>");
+                                    }
+                                }
+                            }
+                        }
+                    });
         }
 
         /**
@@ -1194,6 +1234,8 @@
         }
 
         loadPosts($('#post-list'));
+        loadPosts($('#post-pagination'), true);
+
         loadTags($('#tag-list'));
 
         /** Preloader:

@@ -48,26 +48,7 @@
                         </div><!-- .post-inner -->
                     </article>
 
-                    <nav class="post-pagination section-box">
-                        <div class="post-next">
-                            <div class="post-tag">Previous Article <a href="">#Tagapple</a></div>
-                            <h3 class="post-title"><a href="">How ipsum project web dolor sit amet</a></h3>
-
-                            <div class="post-info">
-                                <a href=""><i class="icon icon-user"></i>by admin</a>
-                                <a href=""><i class="icon icon-comments"></i>56</a>
-                            </div>
-                        </div>
-                        <div class="post-prev">
-                            <div class="post-tag">Next Article <a href="">#Photography</a></div>
-                            <h3 class="post-title"><a href="">project web dolor sit amet</a></h3>
-
-                            <div class="post-info">
-                                <a href=""><i class="icon icon-user"></i>by admin</a>
-                                <a href=""><i class="icon icon-comments"></i>56</a>
-                            </div>
-                        </div>
-                    </nav><!-- .post-pagination -->
+                    <nav id="post-pagination" class="post-pagination section-box"></nav>
                 </main>
                 <!-- .post-single -->
             </div>
@@ -81,7 +62,7 @@
                             </div>
                             <div class="profile-info">
                                 <h2 class="profile-title">{{author}}</h2>
-                                <h3 class="profile-position">Developer and businessman</h3>
+                                <h3 class="profile-position">{{ @blog.description }}</h3>
                             </div>
                         </aside><!-- .widget-profile -->
 
@@ -133,18 +114,7 @@
 
                         <aside class="widget widget-recent-posts">
                             <h2 class="widget-title">Recent posts</h2>
-                            <ul id="post-list">
-                                <!--
-                                <li>
-                                    <div class="post-tag">
-                                        <a href="">#Photo</a>
-                                        <a href="">#Architect</a>
-                                    </div>
-                                    <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-                                    <div class="post-info"><a href=""><i class="icon icon-comments"></i>56 comments</a></div>
-                                </li>
-                                -->
-                            </ul>
+                            <ul id="post-list"></ul>
                         </aside><!-- .widget-recent-posts -->
 
                         <aside class="widget widget_categories">
@@ -155,6 +125,7 @@
                 </div><!-- .sidebar -->
             </div><!-- .col-sm-4 -->
         </div><!-- .row -->
+        <span id="post-id" style="display: none">{{ id }}</span>
         <!-- END: PAGE CONTENT -->
 
     </div><!-- .container -->
