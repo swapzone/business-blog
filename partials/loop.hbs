@@ -1,14 +1,16 @@
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
 <div class="grid-item">
-    <article class="post-box {{post_class}}">
+    <article class="post-box {{post_class}} animate-up"><!-- TODO remove animate-up on index page? -->
+        {{#if image}}
         <div class="post-media">
             <div class="post-image">
-                {{#if image}}
-                    <a href="{{ url }}"><img src="{{ image }}" alt="Post image"></a>
-                {{/if}}
+                <a href="{{ url }}"><img src="{{ image }}" alt="Post image"></a>
             </div>
         </div>
+        {{else}}
+        <div class="post-media no-media"></div>
+        {{/if}}
 
         <div class="post-data">
             <time class="post-datetime" datetime="{{date format='YYYY-MM-DD'}}">
@@ -26,8 +28,7 @@
             </h3>
 
             <div class="post-info">
-                <a href="{{author.url}}"><i class="icon icon-user"></i>by {{author.name}}</a>
-                <a href=""><i class="icon icon-comments"></i>56</a>
+                <a href="/author/{{author.slug}}"><i class="icon icon-user"></i>by {{author.name}}</a>
             </div>
         </div>
     </article>
