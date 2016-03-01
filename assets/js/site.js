@@ -1233,10 +1233,18 @@
                 });
         }
 
-        loadPosts($('#post-list'));
-        loadPosts($('#post-pagination'), true);
+        var postList = $('#post-list');
+        var paginationElement = $('#post-pagination');
+        var tagList = $('#tag-list');
 
-        loadTags($('#tag-list'));
+        if(postList.length)
+            loadPosts(postList);
+
+        if(paginationElement.length)
+            loadPosts(paginationElement, true);
+
+        if(tagList.length)
+            loadTags(tagList);
 
         /** Preloader:
          *  site was successfully loaded, hide site pre-loader */
