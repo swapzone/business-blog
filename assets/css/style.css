@@ -4862,4 +4862,9 @@ body {
 .no-boxshadow.theme-skin-dark .timeline-box-inner {
   border: 1px solid #525458 !important; }
 
+.link-legal {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -11,7 +11,7 @@
 
         <!-- START: PAGE CONTENT -->
         <div class="row animate-up">
-            <div class="col-sm-8">
+            <div class="col-sm-12">
                 <main class="post-single">
                     <article class="post-content section-box">
                         <div class="post-inner">
@@ -30,7 +30,7 @@
                                     </div>
 
                                     <div class="post-info">
-                                        <a href=""><i class="icon icon-user"></i>by {{author.name}}</a>
+                                        <i class="icon icon-user"></i>by <a href="/author/{{author.slug}}">{{author.name}}</a>
                                     </div>
                                 </div>
                             </header>
@@ -47,83 +47,9 @@
                             </footer>
                         </div><!-- .post-inner -->
                     </article>
-
-                    <nav id="post-pagination" class="post-pagination section-box"></nav>
                 </main>
                 <!-- .post-single -->
             </div>
-
-            <div class="col-sm-4">
-                <div class="sidebar sidebar-default">
-                    <div class="widget-area">
-                        <aside class="widget widget-profile">
-                            <div class="profile-photo">
-                                <img src="{{author.image}}" alt="{{author.name}}" style="width: 60%; margin-left: 20%;" />
-                            </div>
-                            <div class="profile-info">
-                                <h2 class="profile-title">{{author}}</h2>
-                                <h3 class="profile-position">{{ @blog.description }}</h3>
-                            </div>
-                        </aside><!-- .widget-profile -->
-
-                        <aside class="widget widget_search">
-                            <h2 class="widget-title">Search</h2>
-                            <form class="search-form">
-                                <label class="ripple">
-                                    <span class="screen-reader-text">Search for:</span>
-                                    <input class="search-field" type="search" placeholder="Search">
-                                </label>
-                                <input type="submit" class="search-submit" value="Search">
-                            </form>
-                        </aside><!-- .widget_search -->
-
-                        <aside class="widget widget_contact">
-                            <h2 class="widget-title">Contact Me</h2>
-                            <form class="contactForm" action="" method="post">
-                                <div class="input-field">
-                                    <input class="contact-name" type="text" name="name"/>
-                                    <span class="line"></span>
-                                    <label>Name</label>
-                                </div>
-
-                                <div class="input-field">
-                                    <input class="contact-email" type="email" name="email"/>
-                                    <span class="line"></span>
-                                    <label>Email</label>
-                                </div>
-
-                                <div class="input-field">
-                                    <input class="contact-subject" type="text" name="subject"/>
-                                    <span class="line"></span>
-                                    <label>Subject</label>
-                                </div>
-
-                                <div class="input-field">
-                                    <textarea class="contact-message" rows="4" name="message"></textarea>
-                                    <span class="line"></span>
-                                    <label>Message</label>
-                                </div>
-
-                                <span class="btn-outer btn-primary-outer ripple">
-                                    <input class="contact-submit btn btn-lg btn-primary" type="submit" value="Send"/>
-                                </span>
-
-                                <div class="contact-response"></div>
-                            </form>
-                        </aside><!-- .widget_contact -->
-
-                        <aside class="widget widget-recent-posts">
-                            <h2 class="widget-title">Recent posts</h2>
-                            <ul id="post-list"></ul>
-                        </aside><!-- .widget-recent-posts -->
-
-                        <aside class="widget widget_categories">
-                            <h2 class="widget-title">Categories</h2>
-                            <ul id="tag-list"></ul>
-                        </aside><!-- .widget_categories -->
-                    </div><!-- .widget-area -->
-                </div><!-- .sidebar -->
-            </div><!-- .col-sm-4 -->
         </div><!-- .row -->
         <span id="post-id" style="display: none">{{ id }}</span>
         <!-- END: PAGE CONTENT -->
