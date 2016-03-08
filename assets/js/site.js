@@ -1055,6 +1055,7 @@
             var contact_form_items = contact_form.find('.input-field');
             var name = contact_form.find('.contact-name');
             var email = contact_form.find('.contact-email');
+            var subject = contact_form.find('.contact-subject');
             var message = contact_form.find('.contact-message');
             var contact_form_response = contact_form.find('.contact-response');
 
@@ -1076,25 +1077,30 @@
             }
 
             if (!errors) {
-                var formContent = contact_form.serialize();
-
-                // TODO add api url
-                /*
                 $.ajax({
                     type: "POST",
-                    url: 'http://my-server.com:3034/api/submit/' + email,
-                    data: formContent,
+                    url: 'http://www.gros-engineering.com/api/email',
+                    data: {
+                        "name": name,
+                        "email": email,
+                        "subject": subject,
+                        "message": message
+                    },
                     success: handleEmailSendResult(contact_form_response),
                     dataType: 'json'
                 });
-                */
             }
 
             return false;
         });
 
+      /**
+       *
+       *
+       * @param response_container
+       */
         function handleEmailSendResult(response_container) {
-            response_container.html("Success!");
+            response_container.html("Your request was successfully send. Thank you.");
         }
 
         /**
