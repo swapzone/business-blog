@@ -8,66 +8,15 @@
     var stickyNav;
     var stickyNavHeight = 0;
 
+    /*
     var calendar = new Object();
     var calendarBusyDays = [
         new Date(2016, 0, 10),
         new Date(2016, 0, 8),
         new Date(2016, 0, 12),
         new Date(2016, 0, 30),
-
-        new Date(2016, 1, 3),
-        new Date(2016, 1, 13),
-        new Date(2016, 1, 29),
-
-        new Date(2016, 2, 3),
-        new Date(2016, 2, 13),
-        new Date(2016, 2, 29),
-
-        new Date(2016, 3, 5),
-        new Date(2016, 3, 18),
-        new Date(2016, 3, 25),
-
-        new Date(2016, 4, 3),
-        new Date(2016, 4, 15),
-        new Date(2016, 4, 28),
-        new Date(2016, 4, 29),
-        new Date(2016, 4, 30),
-        new Date(2016, 4, 31),
-
-        new Date(2016, 5, 10),
-        new Date(2016, 5, 8),
-        new Date(2016, 5, 30),
-
-        new Date(2016, 6, 3),
-        new Date(2016, 6, 13),
-        new Date(2016, 6, 29),
-
-        new Date(2016, 7, 5),
-        new Date(2016, 7, 18),
-        new Date(2016, 7, 25),
-        new Date(2016, 7, 30),
-        new Date(2016, 7, 31),
-
-        new Date(2016, 8, 10),
-        new Date(2016, 8, 8),
-        new Date(2016, 8, 30),
-
-        new Date(2016, 9, 3),
-        new Date(2016, 9, 13),
-        new Date(2016, 9, 29),
-
-        new Date(2016, 10, 5),
-        new Date(2016, 10, 18),
-        new Date(2016, 10, 25),
-
-        new Date(2016, 11, 3),
-        new Date(2016, 11, 15),
-        new Date(2016, 11, 28),
-        new Date(2016, 11, 29),
-        new Date(2016, 11, 30),
-        new Date(2016, 11, 31)
     ];
-
+    */
 
     /**
      * Detect Device Type
@@ -80,7 +29,6 @@
         isMobile = false;
         $('html').addClass('desktop');
     }
-
 
     /**
      * Functions
@@ -124,6 +72,7 @@
         }
     }
 
+    /*
     function positioningInterestsTooltips() {
         var interests = $(".interests-list");
         var tooltips = $(".interests-list li span");
@@ -138,6 +87,7 @@
             }
         }
     }
+    */
 
     function positioningTimelineElements() {
         if ($(window).width() > 600) { // For large devices
@@ -193,6 +143,7 @@
         }
     }
 
+    /*
     function availabilityCalendar() {
         var calendarHtml = $(".calendar-busy");
 
@@ -387,6 +338,7 @@
             });
         }
     }
+    */
 
     function filterBarLinePositioning(grid, button) {
         var filterValue = button.attr('data-filter');
@@ -506,7 +458,7 @@
         google.maps.event.addDomListener(window, 'resize', function () {
             map.setCenter(latlng);
         });
-    };
+    }
 
     function lockScroll() {
         var $html = $('html');
@@ -574,7 +526,7 @@
     function isValidEmail(emailAddress) {
         var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
         return pattern.test(emailAddress);
-    };
+    }
 
     function setSectionContactHeight() {
         var section = $('.section-contact .row');
@@ -611,6 +563,7 @@
             });
     }
 
+    /*
     function setPriceBoxHeight() {
         var priceRow = $('.price-list');
 
@@ -627,6 +580,7 @@
             $('.price-box').css('height', 'auto');
         }
     }
+    */
 
     /**
      * Window Load
@@ -644,7 +598,7 @@
 
         /** Tooltips:
          *  positioning interests section tooltips */
-        positioningInterestsTooltips();
+        //positioningInterestsTooltips();
 
 
         /** Timeline:
@@ -654,14 +608,14 @@
 
         /** Calendar:
          *  calendar object initialization */
-        availabilityCalendar();
+        //availabilityCalendar();
 
         /** Contct Section:
          *  set equal height for section boxes */
         setSectionContactHeight();
 
         /** Set Price Boxe's height */
-        setPriceBoxHeight();
+        //setPriceBoxHeight();
 
         /** Reference Slider */
         var ref_slider = $('.ref-slider');
@@ -1122,16 +1076,26 @@
             }
 
             if (!errors) {
-                $.post("php/contact_form.php",
-                    contact_form.serialize(),
-                    function (response) {
-                        contact_form_response.html(response);
-                    }
-                );
+                var formContent = contact_form.serialize();
+
+                // TODO add api url
+                /*
+                $.ajax({
+                    type: "POST",
+                    url: 'http://my-server.com:3034/api/submit/' + email,
+                    data: formContent,
+                    success: handleEmailSendResult(contact_form_response),
+                    dataType: 'json'
+                });
+                */
             }
 
             return false;
         });
+
+        function handleEmailSendResult(response_container) {
+            response_container.html("Success!");
+        }
 
         /**
          *
@@ -1261,7 +1225,7 @@
 
     $(window).resize(function () {
         var onResize = function () {
-            setPriceBoxHeight();
+            //setPriceBoxHeight();
             stickyNavigationAppear();
             setSectionContactHeight();
             positioningTimelineElements();
