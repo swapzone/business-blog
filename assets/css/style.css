@@ -1777,8 +1777,8 @@ img.aligncenter {
 body {
   color: #3d4451;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.6;
   background-color: #efefef; }
 
 .wrapper {
@@ -4110,6 +4110,7 @@ body {
 .post-title {
   color: #373b42;
   font-size: 20px;
+  margin: 0 0 15px 0;
   line-height: 1.3;
   font-weight: 700;
   text-transform: uppercase; }
@@ -4330,7 +4331,7 @@ body {
   position: relative; }
 .post-single .post-datetime {
   top: 0;
-  left: -60px; }
+  left: -110px; }
 .post-single .post-media {
   position: relative; }
   .post-single .post-media img {
@@ -4342,8 +4343,19 @@ body {
 .post-single .post-content {
   padding: 0;
   margin-bottom: 30px; }
+.post-single .post-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding: 0.6em 0;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 .post-single .post-inner {
-  padding: 0 50px 40px; }
+  padding: 0 100px 40px; }
 .post-single .post-header {
   position: relative;
   padding-top: 30px;

@@ -52,6 +52,12 @@ gulp.task('scripts', function(done) {
     .pipe(concat('script.js'))
     .pipe(gulp.dest('assets/build/'));
 
+   gulp.src([
+      'assets/js/plugins/jquery.fancybox/*.gif',
+      'assets/js/plugins/jquery.fancybox/*.png'
+   ])
+   .pipe(gulp.dest('assets/build/'));
+
    return gulp.src([
       'assets/js/plugins/jquery.bxslider/images/*'
    ])
