@@ -1048,6 +1048,7 @@
 
         /** Contact Form */
         $('.contact-submit').on('click', function (e) {
+            e.preventDefault();
             ripple($(this).parent(), e.pageX, e.pageY);
 
             var errors;
@@ -1057,6 +1058,7 @@
             var email = contact_form.find('.contact-email');
             var subject = contact_form.find('.contact-subject');
             var message = contact_form.find('.contact-message');
+            var button = $(this);
             var contact_form_response = contact_form.find('.contact-response');
 
             // Reset errors
@@ -1081,20 +1083,24 @@
                     type: "POST",
                     url: 'http://www.gros-engineering.com/api/email',
                     data: {
-                        "name": name,
-                        "email": email,
-                        "subject": subject,
-                        "message": message
+                        "name": name.val(),
+                        "email": email.val(),
+                        "subject": subject.val(),
+                        "message": message.val()
                     },
-                    success: handleEmailSendResult(contact_form_response),
-                    dataType: 'json'
+                    success: function() {
+                        contact_form_items.hide();
+                        button.hide();
+                        contact_form_response.html("Your message has been sent successfully.");
+                    },
+                    error: function() {
+                        contact_form_response.html("Your message could not be sent. Please use <a href='mailto:info@gros-engineering.com'>info@gros-engineering.com</a> to send a message.");
+                    }
                 });
             }
-
-            return false;
         });
 
-      /**
+        /**
        *
        *
        * @param response_container
