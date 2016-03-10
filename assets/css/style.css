@@ -4880,5 +4880,13 @@ body {
   text-align: center;
   padding-bottom: 1em;
 }
+.overlay {
+  background:transparent;
+  position:relative;
+  height: 266px;
+  top: 276px;
+  margin-top: -266px;
+  z-index:1000;
+}
 
 /*# sourceMappingURL=style.css.map */
