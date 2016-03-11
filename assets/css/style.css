@@ -2237,7 +2237,7 @@ body {
  * 9.4 - Header With BgImage
  */
 .header-has-img .header {
-  margin-bottom: 40px; }
+  margin-bottom: 20px; }
 .header-has-img .head-bg {
   height: 270px;
   display: block; }
