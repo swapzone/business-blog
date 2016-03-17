@@ -1,0 +1,15 @@
+<nav class="pagination" role="navigation">
+    {{#if prev}}
+        <span class="slider-prev">
+            <a class="newer-posts" href="{{page_url prev}}#blog">
+                <i class="icon icon-chevron_left"></i></a>
+        </span>
+    {{/if}}
+    <span class="page-number">Page {{page}} of {{pages}}</span>
+    {{#if next}}
+        <span class="slider-next">
+            <a class="older-posts" href="{{page_url next}}#blog">
+                <i class="icon icon-chevron_right"></i></a>
+        </span>
+    {{/if}}
+</nav>
