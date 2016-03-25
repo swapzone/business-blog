@@ -4370,6 +4370,15 @@ body {
 .post-single .post-comments {
   padding-top: 0; }
 
+@media (max-width: 767px) {
+.post-single .post-inner {
+  padding: 0 30px 40px; }
+}
+@media (max-width: 480px) {
+.post-single .post-inner {
+  padding: 0 10px 40px; }
+}
+
 .post-pagination {
   margin-bottom: 50px;
   padding: 0; }
