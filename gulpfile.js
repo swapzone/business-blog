@@ -1,5 +1,7 @@
 // include gulp
 var gulp = require('gulp'),
+  cssmin = require('gulp-cssmin'),
+  rename = require('gulp-rename'),
   concat = require('gulp-concat');
 
 /*****************************************************************************/
@@ -21,6 +23,8 @@ gulp.task('styles', function() {
       'assets/fonts/icomoon/style.css'
     ])
     .pipe(concat('style.css'))
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('assets/build/'));
 
     // also copy fonts

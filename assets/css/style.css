@@ -4897,5 +4897,28 @@ body {
   margin-top: -266px;
   z-index:1000;
 }
-
+/* Code styling */
+code, tt {
+    padding: .2rem .3rem .1rem;
+    border: 1px solid #d8e0e4;
+    background: #f5f7f8;
+    border-radius: 2px;
+    color: #c25;
+    vertical-align: middle;
+    white-space: pre-wrap;
+    font-size: .9em;
+    line-height: 1em;
+    margin-left: 0.2em;
+}
+.markdown, code, pre, tt {
+    font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+}
+pre code, pre tt {
+    padding: 0;
+    border: none;
+    font-size: .9em;
+    background: 0 0;
+    color: inherit;
+    white-space: pre-wrap;
+}
 /*# sourceMappingURL=style.css.map */
